@@ -58,12 +58,9 @@ HowWeAchieveCards.Wrapper = styled.div`
     margin-top: 5%;
     @media only screen and (max-width: ${__devices.small}){
         display:block;
-        margin: 0;
-        margin-top: 5%;
-            
+        margin: auto;   
         padding: 0;
         width: 90%;
-        width: 90%;
-        margin-left: 2.5%;
+
     }
 `;

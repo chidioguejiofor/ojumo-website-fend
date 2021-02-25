@@ -9,8 +9,8 @@ import __devices from '../../../../settings/__devices';
 
 
 const LOCATION_ICON_LINK='https://res.cloudinary.com/maintenance-site/image/upload/v1577103376/Vector.png';
-const PHONE_ICON_LINK='https://res.cloudinary.com/maintenance-site/image/upload/v1577104780/Group.png';
-
+const MAIL_ICON_LINK='https://res.cloudinary.com/maintenance-site/image/upload/v1577104780/Group.png';
+const PHONE_ICON_LINK="https://icon2.cleanpng.com/20180625/zwt/kisspng-uber-wyndham-hotels-resorts-business-united-stat-white-phone-icon-5b3070fcce41a4.7424361515299013088448.jpg"
 export default function Footer(){
     return (
         <Footer.Container>
@@ -25,7 +25,7 @@ export default function Footer(){
                 </div>
                 <div className="non-res-only">
                     <Paragraph color="BRAND_WHITE" width="auto" fontSize="xSmall">
-                        Copyright @2019 All rights reserved.
+                        Copyright @2021 All rights reserved.
                     </Paragraph>
                 </div>
             </FooterSection>
@@ -48,16 +48,28 @@ export default function Footer(){
                         </div>
                     </div>
                     <div>
-                        <Image showInSmallScreen imgHeight="30px" imgWidth="30px" backgroundURL={PHONE_ICON_LINK}
+                        <Image showInSmallScreen imgHeight="30px" imgWidth="30px" backgroundURL={MAIL_ICON_LINK}
                                backgroundSize="contain"/>
                         <div>
                             <Paragraph fontSize="small" width="100%">
-                                some-email@email.com
+                                ojumohouse@gmail.com
                             </Paragraph>
 
                         </div>
                     </div>
+                    <div>
+                        <Image showInSmallScreen imgHeight="30px" imgWidth="30px" backgroundURL={PHONE_ICON_LINK}
+                               backgroundSize="contain"/>
 
+                    
+
+                        <div>
+                            <Paragraph fontSize="small" width="100%">
+                            +234 816 457 9992
+                            </Paragraph>
+
+                        </div>
+                    </div>
                 </div>
 
 
@@ -65,7 +77,7 @@ export default function Footer(){
 
             <div className="res-only">
                 <Paragraph color="BRAND_WHITE" width="auto" fontSize="xSmall">
-                    Copyright @2019 All rights reserved.
+                    Copyright @2021 All rights reserved.
                 </Paragraph>
             </div>
         </Footer.Container>
@@ -79,7 +91,7 @@ Footer.Container = styled.div`
       height: auto;
       display: flex;
       align-items: space-between;
-      width: 72%;
+      width: 100%;
       .res-only{
             display:none;
       }
@@ -101,7 +113,7 @@ Footer.Container = styled.div`
       @media only screen and (max-width: ${__devices.small}){
             display: block;
             padding: 10% 5%;
-            width: 90%;
+            /* width: 90%; */
            
             .non-res-only{
                 display: none;

@@ -49,6 +49,9 @@ MissionSection.HowWeAchieve = styled.div`
    background-color: ${BRAND_WHITE};
    font-size: 0.9em;
    padding-bottom: 3em;
+   h1{
+    margin-bottom:1rem;
+   }
    @media only screen and (max-width: ${__devices.small}){
         padding-top: 15% ;
    }

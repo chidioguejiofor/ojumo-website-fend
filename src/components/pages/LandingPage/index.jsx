@@ -10,7 +10,7 @@ export default function LandingPage(){
         <div>
               <OjumoBriefInfo/>
               <MissionSection/>
-              <UpcomingEvents/>
+              {/* <UpcomingEvents/> */}
               <ArticlesSection/>
               <Footer></Footer>
         </div>

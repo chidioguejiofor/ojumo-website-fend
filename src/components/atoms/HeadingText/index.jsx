@@ -16,7 +16,7 @@ export default  function HeadingText(
     }){
     return (
 
-        < HeadingText.Text fontSize={fontSize} color={color} align={align} responsiveAlign={responsiveAlign}>
+        < HeadingText.Text fontSize={fontSize} color={color} align={align} responsiveAlign={responsiveAlign} >
             {children}
         </HeadingText.Text>
     )
