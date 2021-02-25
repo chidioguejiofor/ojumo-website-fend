@@ -10,7 +10,7 @@ export default function MissionCard({backgroundURL, headingText, paragraphText})
 
             <Image backgroundURL={backgroundURL}
                 imgWidth="5em" imgHeight="5em"
-                   imgMargin="0 0 0 34%"
+                   imgMargin="auto"
                    showInSmallScreen={true}
             />
             <MissionCard.TextWrapper>

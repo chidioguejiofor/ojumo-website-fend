@@ -13,7 +13,7 @@ export default function OjumoBriefInfo(){
                 <Header/>
                 <OjumoBriefInfo.Body>
                     <h1>
-                        Lorem ipsum dolor sit amet,  consectetur adipiscing elit.
+                    OJUMO IN YORUBA MEAN "A NEW DAWN".
                     </h1>
                     <p>
                         Ojumo aims to complement the academic, cultural and social education students
@@ -32,14 +32,11 @@ OjumoBriefInfo.Image = styled.div`
         background-position: center center;
         height: 100vh;
         
-       @media only screen and  (max-width: ${__devices.xSmall}) and (max-height:639px){
-            height: auto;
-        }
-        
-       @media only screen and  (max-width: ${__devices.small}) and (max-height:${__devices.xSmall}){
-            height: auto;
-        }
-     }
+   
+        @media only screen and (max-width: ${__devices.small}) and (max-height: ${__devices.large}){
+            height: initial;
+    }
+     
 `;
 
 
@@ -86,14 +83,16 @@ OjumoBriefInfo.Body = styled.div`
     
     
     @media only screen and (max-width: ${__devices.small}) and (max-height: ${__devices.large}){
-            margin-top: 25%;
+            margin: 25% 2rem;
     }
 
 `;
+
+
 OjumoBriefInfo.Wrapper = styled.div`
     z-index: 10;
     background:rgba(46, 77, 113, 0.61);
-    height:94.7%;
+    height:100%;
     padding: 1.3em 1em;
     @media only screen and (max-width: ${__devices.small}) and (max-height: ${__devices.large}){
         padding: 1.3em 0;

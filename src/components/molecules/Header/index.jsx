@@ -20,7 +20,7 @@ Header.Nav = styled.nav`
    
    display: flex;
    justify-content: flex-start;
-   padding-left: 11%;
+   padding: 0 11%;
    width: 89%;
     // padding: 0;
     // display: flex;

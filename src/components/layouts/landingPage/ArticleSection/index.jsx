@@ -7,48 +7,57 @@ import __fontSizes from 'FontSizes';
 import __devices from 'Devices';
 
 const ArticlesSection = () => {
-  const ROBOT_IMAGE =
-    'https://res.cloudinary.com/maintenance-site/image/upload/w_300/v1580117293/Ojumo/2EJCSULRwC8.png';
-  const CHILDREN_IMAGE =
-    'https://res.cloudinary.com/maintenance-site/image/upload/w_300/v1580117292/Ojumo/AEaTUnvneik.png';
+  const HBR_IMAGE =
+    'https://hbr.org/resources/images/article_assets/2016/07/jul16-29-500344266.jpg';
+  const REMOTE_WORK =
+    'https://content.gallup.com/origin/gallupinc/GallupSpaces/Production/Cms/WORKPLACEV9CMS/ugbsuvtop0-fpwkuvtxc_q.jpg';
+
+    const CAREER_CHOICE='https://res.cloudinary.com/mensaiah/image/upload/v1613378834/steps-to-choosing-career-525506_FINAL-5c536bbbc9e77c0001329194_fhgskc.webp'
   const articles = [
     {
-      imageURL: ROBOT_IMAGE,
-      title: 'Effects of AI and ML',
+      imageURL: HBR_IMAGE,
+      title: 'If You’re Not Outside Your Comfort Zone, You Won’t Learn Anything',
       description:`
-       Vivamus iaculis ante volutpat purus commodo consectetur. Nullam tortor elit, tincidunt eleifend
-     nulla nec, consectetur luctus dui. Pellentesque rutrum pulvinar sem, at interdum nulla
-      `,
-      authorAndDate: 'May 18, 2019 BY Oguejiofor',
+      You need to speak in public, but your knees buckle even before you reach the podium. You want to expand your network, but you’d rather swallow nails than make small talk with strangers...`,
+      url: 'https://hbr.org/2016/07/if-youre-not-outside-your-comfort-zone-you-wont-learn-anything?utm_source=linkedin&utm_campaign=hbr&utm_medium=social',
+      authorAndDate: 'July 29, 2016 By Andy Molinsky',
     },
     {
-      imageURL: CHILDREN_IMAGE,
-      title: 'Extracts from our visit to the orphanage',
+      imageURL: CAREER_CHOICE,
+      title: 'How to Make a Career Choice When You Are Undecided',
       description:`
-        Vivamus iaculis ante volutpat purus commodo consectetur. Nullam tortor elit, tincidunt eleifend
-         nulla nec, consectetur luctus dui. Pellentesque rutrum pulvinar sem, at interdum nulla
-         sollicitudin et. Fusce pharetra vel mauris id viverra. Sed ut suscipit leo. Aenean eget dui
-         semper, pulvinar orci eget, finibus mi.
-              Vivamus iaculis ante volutpat purus commodo consectetur. Nullam tortor elit, tincidunt eleifend
-         nulla nec, consectetur luctus dui. Pellentesque rutrum pulvinar sem, at interdum nulla
-         sollicitudin et. Fusce pharetra vel mauris id viverra. Sed ut suscipit leo. Aenean eget dui
-         semper, pulvinar orci eget, finibus mi.
-      `,
-       authorAndDate: 'May 18, 2019 BY Oguejiofor',
-    }
+      With thousands of options, how will you choose a career that's right for you? If you don't have any idea what you want to do, the task may seem insurmountable. Fortunately, it isn't. Follow an organized process and you will increase your chances of making a good decision.
+      `, 
+      url:"https://www.thebalancecareers.com/steps-to-choosing-career-525506",
+       authorAndDate: '20th November 2019 BY DAWN ROSENBERG MCKAY',
+    },
+    {
+        imageURL: REMOTE_WORK,
+        title: 'Can young people thrive in a remote-work world?',
+        description:`
+        The pandemic quashed the experience of learning in a traditional office. 
+        Can younger workers grow in the same way while working at their kitchen tables?
+        `, 
+        url:"https://www.bbc.com/worklife/article/20201023-can-young-people-thrive-in-a-remote-work-world",
+         authorAndDate: '28th October 2020 By Sam Blum',
+      }
+
   ];
   return (
     <ArticlesSection.Wrapper>
-            <HeadingText responsiveAlign="center">Upcoming Events</HeadingText>
+            <HeadingText responsiveAlign="center">Articles</HeadingText>
             <ArticlesSection.ArticleContainer>
 
                 {articles.map((element, index)=>(
                     <div key={index}>
-                        <Image
-                            showInSmallScreen imgHeight="25em" imgWidth="94%" backgroundURL={element.imageURL}
-                                   backgroundSize="contain" responsiveWidth="100%"/>
+ 
+                           {/* <Image
+                            showInSmallScreen  imgHeight="20rem" imgWidth="30em" backgroundURL={element.imageURL}
+                                   backgroundSize="contain" responsiveWidth="100%"/>  */}
+<img src={element.imageURL} alt="Article Image"/>
+                        
                        <div className="text-heading">
-                           <HeadingText responsiveAlign="center" color="BRAND_BLACK">{element.title.toUpperCase()}</HeadingText>
+                           <HeadingText responsiveAlign="left" color="BRAND_BLACK">{element.title.toUpperCase()}</HeadingText>
                        </div>
 
                         <Paragraph className="text">
@@ -58,7 +67,7 @@ const ArticlesSection = () => {
                              <Paragraph >{element.description}</Paragraph>
                         </div>
                         <div className="read-more">
-                            <a href="#">
+                            <a  target="_blank" rel="noopener noreferrer" href={element.url}>
                                  Read More ...
                             </a>
                         </div>
@@ -71,17 +80,31 @@ const ArticlesSection = () => {
 };
 
 ArticlesSection.ArticleContainer = styled.div`
-display: flex;
+/* display: flex; */
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:1rem;
 
+img{
+    width:100%;
+    height: 20rem;
+    object-fit:cover;
+}
 > div{
     width: 100%;
     height: 100%;
+    margin-bottom:1rem;
 }
 
 .text-heading{
-    height: 4.375em;
+    /* height: 4.375em; */
+    /* margin-bottom:1rem; */
+    margin:1rem 0;
 }
-
+.img{
+    width:100%;
+    height:100%;
+}
 .p-wrapper{
     padding-top: 3%;
     width: 90%;
@@ -104,17 +127,25 @@ display: flex;
     padding-top:3%;
 }
 
-@media only screen and  (max-width: ${__devices.xSmall}){
+@media only screen and  (max-width: ${__devices.medium}){
+    /* flex-wrap: wrap; */
     display: block;
+    .text-heading{
+    /* height: 4.375em; */
+    font-size:${__fontSizes.small}
+}
+
 }
 
 `;
 
 ArticlesSection.Wrapper = styled.div`
- padding: 4% 9% 4% 12% ;
+ padding: 4% 6% 4% 6% ;
 background-color: #FFF6F6;
 
-
+h1{
+    margin-bottom:1rem;
+}
 @media only screen and  (max-width: ${__devices.xSmall}){
     padding: 5% 3%;
     .container{
